@@ -1,0 +1,18 @@
+.carBoxContainer{
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.carBoxHeader{
+    text-align: center;
+}
+
+.carBoxContainer div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    align-items: center;
+    text-align: center;
+}

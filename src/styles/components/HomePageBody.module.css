@@ -1,0 +1,10 @@
+.homePageBodyContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--title);
+}
+
+.homePageBodyContainer h1{
+   color: var(--white);
+}
