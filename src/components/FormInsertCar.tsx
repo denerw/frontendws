@@ -11,13 +11,13 @@ export function FormInsertCar(){
     var marcaIdsEncontrados=[]
 
     const onSubmit = (data) => {
-        console.log("retornou")
+        
 
         let marcaNome
         
         const timestamp = Math.floor((new Date().getTime())/1000);
 
-        console.log(timestamp)
+
 
         const numberMarcaId = parseInt(data.marca_id)
 
@@ -55,7 +55,6 @@ export function FormInsertCar(){
             cor: data.cor, 
             timestamp_cadastro : timestamp
         }
-        console.log(newCar)
 
         cars.cars.push(newCar)
     }
@@ -75,12 +74,12 @@ export function FormInsertCar(){
                  <select name="marca_id" {...register("marca_id", { required: true })}>
                     <option value="">Selecione</option>
                     {
-                    cars.cars.map(carMap => { //Varre o array de carros pra procurar por marcas
+                    cars.cars.map((carMap, i) => { //Varre o array de carros pra procurar por marcas
                     
                     if (!marcaIdsEncontrados.includes(carMap.marca_id)) { //Varre o array pra verificar se todas as marcas já geraram opções de seleção
                         marcaIdsEncontrados.push(carMap.marca_id)
                         return (
-                            <option value={carMap.marca_id}>{carMap.marca_nome}</option>
+                            <option key={i} value={carMap.marca_id}>{carMap.marca_nome}</option>
                             )
                     }
                     }

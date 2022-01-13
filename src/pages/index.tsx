@@ -38,24 +38,6 @@ export default function Home() {
       break;
   }
 
-  // if(screen == 0 ){
-  //   screenToShow =<HomePageBody/>}
-
-  // if(screen == 1 ){
-  //   screenToShow = <AllCarsPage/>}
-
-  // if(screen == 2 ){
-  // screenToShow =
-  // <FactoryHeaderProvider>
-  // <FactoryPageProvider id = {3}>
-  // <FactoryPage/>
-  // </FactoryPageProvider>
-  // </FactoryHeaderProvider>
-  // }
-
-  // if(screen == 3 ){
-  //   screenToShow = <FormInsertCar/>}
-
   return (
    
     <div className={styles.container} >

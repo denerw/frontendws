@@ -12,11 +12,11 @@ export function FactoryBox(){
 
         <h1>{nome}</h1>
         <span>
-        {cars.cars.map(carMap =>   
+        {cars.cars.map((carMap, i) =>   
             {if(carMap.marca_id == id){
             return(
-             <CarProvider thisCar = {carMap}>
-             <div><CarBox /></div>
+             <CarProvider thisCar = {carMap} key={i}>
+             <div ><CarBox /></div>
              </CarProvider>)
              } 
             }

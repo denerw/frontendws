@@ -1,9 +1,6 @@
 import {createContext, useState, ReactNode, useEffect} from 'react';
 
 interface Car {
-    // type: 'body' | 'eye';
-    // description: string;
-    // amount: number;
     id: number;
     marca_id: number;
     marca_nome:String;
@@ -31,18 +28,14 @@ interface CarsContextData {
 
 interface CarsProviderProps{
     children: ReactNode;
-    // carIndex: number;
     thisCar : Car;
-    // level: number;
-    // currentExperience: number;
-    // challengesCompleted: number;
 }
 
 
 export const CarsContext = createContext({} as CarsContextData);
 
 export function CarProvider ({children, ...rest}: CarsProviderProps){
-    // const car = cars[rest.carIndex];
+
     const car = rest.thisCar;
 
     const id = car.id;

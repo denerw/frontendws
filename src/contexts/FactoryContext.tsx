@@ -20,10 +20,6 @@ interface FactoriesProviderProps{
 export const FactoryContext = createContext({} as FactoriesContextData);
 
 export function FactoryProvider ({children, ...rest}: FactoriesProviderProps){
-    // const factory = rest.thisFactory;
-
-    // const id = factory.marca_id;
-    // const nome = factory.marca_nome;
 
     const id = rest.id;
 

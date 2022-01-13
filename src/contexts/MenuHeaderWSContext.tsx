@@ -14,7 +14,6 @@ interface MenuHeaderWSContextData {
 
 interface MenuHeaderWSProviderProps{
     children: ReactNode;
-    //selectedScreen: number;
 }
 
 

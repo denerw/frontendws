@@ -1,34 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+﻿**FRONTEND-WS**
+Breve descritivo do uso dos componentes do app:
 
-## Getting Started
+**CarBox.tsx**
+Este componente expõe os dados dos veículos cadastrados no arquivo car.json. É utilizado dentro de "FactoryBox.tsx" e "AllCarsPage.tsx" e tem seus dados e funções fornecidos por CarContext.tsx.
 
-First, run the development server:
+**FactoryBox.tsx**
+Este componente exibe os veículos cadastrados em uma determinada fábrica. Este componente é chamado por "FactoryPage.tsx" e ambos estes componentes tem suas características e funções fornecidas por FactoryContext.tsx.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+**FactoryHeader.tsx**
+É o componente que faz a seleção do contexto de fábrica a ser utilizado para renderização da página de fábricas.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**FormInsertCar.tsx**
+É chamado na página de formulário e recebe os dados para a adição de um novo carro.
