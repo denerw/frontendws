@@ -1,60 +1,63 @@
 import styles from '../styles/components/FormInsertCar.module.css'
 import {useForm} from "react-hook-form";
 // import fs from 'fs';
-//import cars from '../../cars.json'
+import cars from '../../cars.json'
+import { timeStamp } from 'console';
 
 
 export function FormInsertCar(){
     const {register, handleSubmit, formState:{errors}} = useForm();
 
+    var marcaIdsEncontrados=[]
+
     const onSubmit = (data) => {
         console.log("retornou")
 
-        let marcaId
+        let marcaNome
+        
+        const timestamp = Math.floor((new Date().getTime())/1000);
 
-        //const fs = require("fs");
-        // let carsjson = fs.readFileSync("cars.json","utf-8");
-        // let cars = JSON.parse(carsjson);
+        console.log(timestamp)
 
-        switch (data.marca) {
-            case "TOYOTA":
-                marcaId = 1;
+        const numberMarcaId = parseInt(data.marca_id)
+
+        switch (numberMarcaId) {
+            case 1:
+                marcaNome = "TOYOTA";
                 break;
 
-            case "FORD":
-                marcaId = 2;
+            case 2:
+                marcaNome = "FORD";
                 break;
 
-            case "VW":
-                marcaId = 3;
+            case 3:
+                marcaNome = "VW";
                 break;
 
-            case "FIAT":
-                marcaId = 4;
+            case 4:
+                marcaNome = "FIAT";
                 break;
 
             default:
                 break;
         }
 
+        
         const newCar = {
-            id: 8, 
-            marca_id: marcaId, 
-            marca_nome: data.marca, 
+            id: 9, 
+            marca_id: numberMarcaId, 
+            marca_nome: marcaNome, 
             nome_modelo: data.modelo, 
             ano: data.ano, 
             combustivel : data.combustivel, 
             num_portas: data.portas, 
             valor_fipe: data.valor, 
             cor: data.cor, 
-            timestamp_cadastro : 1636636150
+            timestamp_cadastro : timestamp
         }
         console.log(newCar)
 
-        // cars.push(newCar)
-
-        // carsjson = JSON.stringify(cars);
-        // fs.writeFileSync("cars.json",carsjson,"utf-8");
+        cars.cars.push(newCar)
     }
 
  return(
@@ -69,18 +72,25 @@ export function FormInsertCar(){
 
              <div>
                  Marca
-                 <select name="marca" {...register("marca", { required: true })}>
-                     <option value="">Selecione</option>
-                     <option value="TOYOTA">Toyota</option>
-                     <option value="FORD">Ford</option>
-                     <option value="VW">Volkswagen</option>
-                     <option value="FIAT">FIAT</option>
+                 <select name="marca_id" {...register("marca_id", { required: true })}>
+                    <option value="">Selecione</option>
+                    {
+                    cars.cars.map(carMap => { //Varre o array de carros pra procurar por marcas
+                    
+                    if (!marcaIdsEncontrados.includes(carMap.marca_id)) { //Varre o array pra verificar se todas as marcas já geraram opções de seleção
+                        marcaIdsEncontrados.push(carMap.marca_id)
+                        return (
+                            <option value={carMap.marca_id}>{carMap.marca_nome}</option>
+                            )
+                    }
+                    }
+                    )}
                  </select>
              </div>
-
+             
             {/* <div>
                 Marca
-            <input type="text" name="marca" placeholder="Marca" {...register("marca")} />
+            <input type="text" name="marca_id" placeholder="Marca" {...register("marca_id")} />
             </div> */}
 
             <div>
@@ -99,11 +109,6 @@ export function FormInsertCar(){
                      <option value="GNV">GNV</option>
                  </select>
              </div>
-
-            {/* <div>
-                Combustível
-            <input type="text" name="combustivel" placeholder="Combustível" {...register("combustivel")} />
-            </div> */}
 
             <div>
                 Portas

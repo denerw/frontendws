@@ -1,5 +1,4 @@
 import {createContext, useState, ReactNode, useEffect} from 'react';
-import cars from '../../cars.json'
 
 interface Car {
     // type: 'body' | 'eye';
@@ -19,6 +18,7 @@ interface Car {
 
 interface CarsContextData {
     id: number;
+    marca_id: number;
     marca: String;
     modelo: String;
     ano: number;
@@ -45,7 +45,8 @@ export function CarProvider ({children, ...rest}: CarsProviderProps){
     // const car = cars[rest.carIndex];
     const car = rest.thisCar;
 
-    const id = car.marca_id;
+    const id = car.id;
+    const marca_id = car.marca_id;
     const marca = car.marca_nome;
     const modelo = car.nome_modelo;
     const ano =  car.ano;
@@ -59,6 +60,7 @@ export function CarProvider ({children, ...rest}: CarsProviderProps){
         <CarsContext.Provider  
         value={{
             id,
+            marca_id,
             marca,
             modelo,
             ano,

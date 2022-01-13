@@ -4,8 +4,8 @@ import '../styles/global.css'
 function MyApp({ Component, pageProps }) {
   return (
     <MenuHeaderWSProvider>
-  <Component {...pageProps} />
-  </MenuHeaderWSProvider>
+      <Component {...pageProps} />
+    </MenuHeaderWSProvider>
   )
   
 }

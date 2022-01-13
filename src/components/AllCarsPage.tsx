@@ -8,7 +8,7 @@ export function AllCarsPage(){
     return(
         <div className = {styles.allCarsPageContainer}>
         
-        {cars.map(carMap =>             
+        {cars.cars.map(carMap =>             
              <CarProvider thisCar = {carMap}>
              <div><CarBox /></div>
              </CarProvider>

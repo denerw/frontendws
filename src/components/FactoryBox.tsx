@@ -11,7 +11,8 @@ export function FactoryBox(){
         <div className = {styles.factoryBoxContainer}>
 
         <h1>{nome}</h1>
-        {cars.map(carMap =>   
+        <span>
+        {cars.cars.map(carMap =>   
             {if(carMap.marca_id == id){
             return(
              <CarProvider thisCar = {carMap}>
@@ -20,6 +21,7 @@ export function FactoryBox(){
              } 
             }
         )}
+        </span>
 
 
         </div>

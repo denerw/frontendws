@@ -1,14 +1,19 @@
 .carBoxContainer{
     display: flex;
+    width: 16rem;
     flex-direction: column;
     color: var(--white);
+    margin: 10px;
 }
 
+.carBoxContainer strong{
+    font-size: 1.25rem;
+}
 .carBoxHeader{
     text-align: center;
 }
 
-.carBoxContainer div{
+.carBoxContainer div:first-child{
     display: flex;
     flex-direction: row;
     justify-content: space-between;

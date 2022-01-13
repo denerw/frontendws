@@ -8,21 +8,6 @@
     flex-direction: row;
 }
 
-
-.factoryHeaderContainer div{
-    /* display: flex;
-    flex-direction: row;  */
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1rem;
-
-}
-
-.factoryHeaderContainer div img {
-    width: 40px;
-}
-
 .factoryHeaderButton{
     height: 33px;
     width: 110px;
@@ -40,8 +25,6 @@
     transition: filter 0.2s;
     
     background: rgb(1, 1, 26);
-    /* border-left: 40px solid rgb(1, 1, 26); */
-    /* border-right: 10px solid rgb(1, 1, 26); */
 }
 
 .factoryHeaderButton:hover{

@@ -15,40 +15,46 @@ export default function Home() {
 
   let screenToShow;
 
-  // switch(screen){
-  //   case 0:
-  //     screenToShow = <HomePageBody/>;
-  //     break;
+  switch(screen){
+    case 0:
+      screenToShow =<HomePageBody/>
+      break;
     
-  //   case 1:
-  //     screenToShow = <AllCarsPage/>;
-  //     break;
+    case 1:
+      screenToShow = <AllCarsPage/>
+      break;
     
-  //   case 2:
-  //     screenToShow = <FactoryPageProvider id = {3}>
-  //     <FactoryPage/>
-  //     </FactoryPageProvider>;
+    case 2:
+      screenToShow =
+      <FactoryHeaderProvider>
+        <FactoryPageProvider id = {3}>
+         <FactoryPage/>
+        </FactoryPageProvider>
+      </FactoryHeaderProvider>
+      break;
 
-  //     break;
-  // }
-
-  if(screen == 0 ){
-    screenToShow =<HomePageBody/>}
-
-  if(screen == 1 ){
-    screenToShow = <AllCarsPage/>}
-
-  if(screen == 2 ){
-  screenToShow =
-  <FactoryHeaderProvider>
-  <FactoryPageProvider id = {3}>
-  <FactoryPage/>
-  </FactoryPageProvider>
-  </FactoryHeaderProvider>
+    case 3:
+      screenToShow = <FormInsertCar/>
+      break;
   }
 
-  if(screen == 3 ){
-    screenToShow = <FormInsertCar/>}
+  // if(screen == 0 ){
+  //   screenToShow =<HomePageBody/>}
+
+  // if(screen == 1 ){
+  //   screenToShow = <AllCarsPage/>}
+
+  // if(screen == 2 ){
+  // screenToShow =
+  // <FactoryHeaderProvider>
+  // <FactoryPageProvider id = {3}>
+  // <FactoryPage/>
+  // </FactoryPageProvider>
+  // </FactoryHeaderProvider>
+  // }
+
+  // if(screen == 3 ){
+  //   screenToShow = <FormInsertCar/>}
 
   return (
    
@@ -60,22 +66,6 @@ export default function Home() {
     <MenuHeaderWS />
 
     {screenToShow}
-{/*     
-    {screen == 0 &&  <HomePageBody/> }
-   
-    {screen == 2 && 
-    <FactoryPageProvider id = {3}>
-    <FactoryPage/>
-    </FactoryPageProvider>
-    }
-
-    {screen == 1 && 
-    <AllCarsPage/>
-    } */}
-
-    {/* <FactoryPageProvider id = {3}>
-    <FactoryPage/>
-    </FactoryPageProvider> */}
 
     {console.log(screen)}
   

@@ -28,7 +28,7 @@ export function FactoryProvider ({children, ...rest}: FactoriesProviderProps){
     const id = rest.id;
 
     var nome = '';
-    cars.map(carMap =>   
+    cars.cars.map(carMap =>   
         {if(carMap.marca_id == id){
         nome = carMap.marca_nome;
          } 

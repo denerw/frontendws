@@ -18,45 +18,58 @@ interface CarProps {
 export function CarBox(){
     const {modelo, id, marca, ano, combustivel, portas, valor, cor, cadastro} = useContext(CarsContext);
 
+    function timestampToDate(ts){
+        var date = new Date(ts * 1000);
+        var day = date.getDay();
+        var month = date.getMonth();
+        var year = date.getFullYear();
+        var hours = date.getHours();
+        var minutes = "0"+ date.getMinutes();
+        var seconds = "0" + date.getSeconds();
+
+        var finalDate = day + "/" + month + "/" + year + " " + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+        return(
+            finalDate
+        )
+    }
+
     return(
         <div className={styles.carBoxContainer}>
 
-        <header className={styles.carBoxHeader}>
-            <strong> {modelo}</strong>
-        </header>
-
+        <strong> {modelo}</strong>
+    
         <div>
-        <div>ID:</div><div>{id}</div>
+        <div>ID: {id}</div>
         </div>
 
         {console.log(modelo)}
 
         <div>
-        <div>Marca:</div><div>{marca}</div>
+        <div>Marca: {marca}</div>
         </div>
 
         <div>
-        <div>Ano:</div><div>{ano}</div>
+        <div>Ano: {ano}</div>
         </div>
 
         <div>
-        <div>Combustível:</div><div>{combustivel}</div>
+        <div>Combustível: {combustivel}</div>
         </div>
 
         <div>
-        <div>Portas:</div><div>{portas}</div>
+        <div>Portas: {portas}</div>
         </div>
 
         <div>
-        <div>Valor:</div><div>{valor}</div>
+        <div>Valor: {valor}</div>
         </div>
 
         <div>
-        <div>Cor:</div><div>{cor}</div>
+        <div>Cor: {cor}</div>
         </div>
 
         <div>
-        <div>Cadastro em:</div><div>{cadastro}</div>
+        <div>Cadastro em: {timestampToDate(cadastro)}</div>
         </div>
 
         </div>
